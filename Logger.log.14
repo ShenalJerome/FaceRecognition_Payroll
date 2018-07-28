@@ -1,0 +1,28 @@
+Apr 02, 2018 12:41:50 AM UIL.FrameRecognizer$captureImage run
+WARNING: videoInput.getPixels() Error: Could not get pixels.
+org.bytedeco.javacv.FrameGrabber$Exception: videoInput.getPixels() Error: Could not get pixels.
+	at org.bytedeco.javacv.VideoInputFrameGrabber.grab(VideoInputFrameGrabber.java:171)
+	at UIL.FrameRecognizer$captureImage.run(FrameRecognizer.java:66)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 02, 2018 12:42:11 AM UIL.FrameRecognizer$captureImage run
+WARNING: videoInput.getPixels() Error: Could not get pixels.
+org.bytedeco.javacv.FrameGrabber$Exception: videoInput.getPixels() Error: Could not get pixels.
+	at org.bytedeco.javacv.VideoInputFrameGrabber.grab(VideoInputFrameGrabber.java:171)
+	at UIL.FrameRecognizer$captureImage.run(FrameRecognizer.java:66)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 02, 2018 12:59:32 AM UIL.FrameNewcustomer$captureImage run
+WARNING: videoInput.getPixels() Error: Could not get pixels.
+org.bytedeco.javacv.FrameGrabber$Exception: videoInput.getPixels() Error: Could not get pixels.
+	at org.bytedeco.javacv.VideoInputFrameGrabber.grab(VideoInputFrameGrabber.java:171)
+	at UIL.FrameNewcustomer$captureImage.run(FrameNewcustomer.java:70)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 02, 2018 12:59:51 AM UIL.FrameNewcustomer$captureImage run
+WARNING: videoInput.getPixels() Error: Could not get pixels.
+org.bytedeco.javacv.FrameGrabber$Exception: videoInput.getPixels() Error: Could not get pixels.
+	at org.bytedeco.javacv.VideoInputFrameGrabber.grab(VideoInputFrameGrabber.java:171)
+	at UIL.FrameNewcustomer$captureImage.run(FrameNewcustomer.java:70)
+	at java.lang.Thread.run(Thread.java:745)
+
