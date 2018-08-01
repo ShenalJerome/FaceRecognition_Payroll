@@ -52,7 +52,21 @@ public class UserDB {
     }
     
   
-    
+     public ResultSet getAccountdetails(Users obj)
+    {
+        ResultSet rs=null;
+        try
+        {
+            String SQL="select*from accountants where ID="+obj.getID()+" and Password="+obj.getPassword()+"";
+            DBConnection mycon=new DBConnection();
+            rs=mycon.getValues(SQL);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return rs;
+    }
 
    
     public ResultSet getAlldetails()

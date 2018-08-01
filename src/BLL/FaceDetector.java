@@ -65,8 +65,8 @@ public class FaceDetector {
         IplImage smallimage = IplImage.create(grayimage.width(), grayimage.height(), grayimage.depth(), grayimage.nChannels());
         //cvConvert(grayimage,smallimage);
         cvClearMemStorage(storage);
-        cvResize(grayimage, smallimage, CV_INTER_AREA);//resize the image for detection
-        faces = cvHaarDetectObjects(smallimage, classifier, storage, 1.1, 3, CV_HAAR_DO_CANNY_PRUNING);
+        faces = cvHaarDetectObjects(smallimage, classifier, storage, 1.1, 3, CV_HAAR_DO_CANNY_PRUNING);        cvResize(grayimage, smallimage, CV_INTER_AREA);//resize the image for detection
+
         
         if (faces != null)
         {

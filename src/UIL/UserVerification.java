@@ -122,7 +122,7 @@ public class UserVerification extends javax.swing.JFrame {
     private void openFile()//alternative to real time detection
     {
         final JFrame frame = new JFrame("Select image to be recognized");
-        JFileChooser fc=new JFileChooser(".\\trainingset");
+        JFileChooser fc=new JFileChooser("D:\\Final Project\\FaceRecognition_Payroll\\trainingset");
         int returnVal = fc.showOpenDialog(frame);
         if(returnVal==JFileChooser.APPROVE_OPTION)
         {
@@ -177,42 +177,50 @@ public class UserVerification extends javax.swing.JFrame {
         ResultSet rs;
         Users cobj=new Users();
         double feature[]=new double[80];
-        int id,password;
+        int id,Password;
         feature=gf.getFeature(newImage);
         try
         {
-            //id=nnet.recognizeFaces(feature,outputs);//get the recognized id
-            //if(id==0)
-             id=nnet.recognizeFaces(feature,outputs);//get the recognized id
-            password=Integer.parseInt(txtPIN.getText());
+            id=nnet.recognizeFaces(feature,outputs);//get the recognized id
+            Password=Integer.parseInt(txtPIN.getText());
             cobj.setID(id);
-            cobj.setPassword(password);
+            cobj.setPassword(Password);
             UserDB cdobj=new UserDB();
-            rs=cdobj.getDetails(cobj);
+            rs=cdobj.getAccountdetails(cobj);
             if(rs.next()==false)
             {
                 JOptionPane.showMessageDialog(null,"Unauthorized User - Try again","ERROR",JOptionPane.ERROR_MESSAGE);
             }
             else
             {
-                PayRoll_System atmo=new PayRoll_System(id, password);
+                PayRoll_System atmo=new PayRoll_System(id, Password);
                 atmo.show(); 
                 grabber.stop();
                 grabber.close();
                 this.hide();
             }
-              }
+            /*rs2=cdobj.getDetails(cobj);
+            while(rs.next())
+            {
+                acc=rs.getInt(2);
+                bal=rs.getFloat(5);
+                with=rs.getFloat(6);
+            }
+            while(rs2.next())
+            {
+                name=rs2.getString(2);
+                address=rs2.getString(3);
+                mobile=rs2.getInt(4);
+            }*/
+        }
         catch(SQLException e)
         {
             JOptionPane.showMessageDialog(null,"cannot retrive values","ERROR",JOptionPane.ERROR_MESSAGE);
             logger.log(Level.WARNING, "Cannot retrive values {0}", e);
-            fh.close();
         } catch (FrameGrabber.Exception ex) {
-            logger.log(Level.WARNING, "Cannot retrive values {0}", ex);
-            fh.close();
+            Logger.getLogger(UserVerification.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -287,6 +295,11 @@ public class UserVerification extends javax.swing.JFrame {
         jToolBar1.add(btnGotologin);
 
         txtPIN.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPINActionPerformed(evt);
+            }
+        });
         txtPIN.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPINKeyTyped(evt);
@@ -370,12 +383,11 @@ public class UserVerification extends javax.swing.JFrame {
     private void btnVerifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerifyActionPerformed
 
        
-        
-        PreProcess pobj=new PreProcess();
+      PreProcess pobj=new PreProcess();
         
         if(txtPIN.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(null,"Enter The password","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please enter your Password and try again","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else
         {
@@ -386,13 +398,13 @@ public class UserVerification extends javax.swing.JFrame {
                 detected=obj.detectFace(captured);
                 if(detected==null)
                 {
-                    JOptionPane.showMessageDialog(null,"Can't Recognize The Face","ERROR",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Please capture again","ERROR",JOptionPane.ERROR_MESSAGE);
                 }
                 else
                 {
                     hist=pobj.histogramEqualization(detected);
                     try {
-                        ImageIO.write(hist,"jpg",(new File(".\\recognized.jpg")));
+                        ImageIO.write(hist,"jpg",(new File("D:\\Final Project\\FaceRecognition_Payroll\\recognized.jpg")));
                     } catch (IOException ex) {
                         Logger.getLogger(UserVerification.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -448,6 +460,10 @@ public class UserVerification extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtPINKeyTyped
+
+    private void txtPINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPINActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPINActionPerformed
 
     /**
      * @param args the command line arguments
