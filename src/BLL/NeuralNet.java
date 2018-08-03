@@ -42,7 +42,7 @@ public class NeuralNet {
     
     private static final Logger logger = Logger.getLogger(NeuralNet.class.getName());
     FileHandler fh;
-    static File dir = new File(".\\trainingset");
+    static File dir = new File("D:\\Final Project\\FaceRecognition_Payroll\\trainingimages");
   
      static final String[] extensions = new String[]{//the file extensions
         "gif", "png", "bmp","jpg"
@@ -63,7 +63,7 @@ public class NeuralNet {
     static DataSet testTra=new DataSet(80, 2);
     /**
      * This method creates the training set
-     * @param outputSize the size of the output(the number of customers)
+     * @param outputSize the size of the output(the number of Accountants)
      */
     public void createTrainingset(int outputSize)
     {
@@ -82,13 +82,14 @@ public class NeuralNet {
                 {
                     img = ImageIO.read(f);
                     imgName = f.getName();//name of the image
-                    imgId = imgName.substring(0, 1);//id of the image by getting the first letter of the image
+                    imgId = imgName.substring(0, 1);
                     id = Integer.parseInt(imgId);
                     
+                    //Assigning the out put size as a double array
                     double[]output=new double[outputSize];
                     Arrays.fill(output,0);
                     output[id-1]=1;
-                    
+                    //Assigning the input size as a double array
                     double []input=new double[80];
                     input=gl.getFeature(img);
                     trainingSet.addRow(new DataSetRow(input,output));
@@ -122,7 +123,7 @@ public class NeuralNet {
         DataSet trainingSet;
         try
         {
-            File file=new File(".\\trainingdataSet.txt");    
+            File file=new File("D:\\Final Project\\FaceRecognition_Payroll\\trainingdataSet.txt");    
             if(!file.exists())
             {                    
                 JOptionPane.showMessageDialog(null,"Dataset does not exist","ERROR",
@@ -130,7 +131,7 @@ public class NeuralNet {
             }
             else
             {
-                trainingSet=TrainingSetImport.importFromFile(".\\trainingdataSet.txt",80,outputSize,",");
+                trainingSet=TrainingSetImport.importFromFile("D:\\Final Project\\FaceRecognition_Payroll\\trainingdataSet.txt",80,outputSize,",");
                 if(trainingSet.getOutputSize()!=outputSize)
                 {
                     JOptionPane.showMessageDialog(null,"Output sizes dont match create/load dataset first","ERROR",
@@ -179,7 +180,7 @@ public class NeuralNet {
         int high=0,id = 0,size=0;
         try
         {
-            newData=TrainingSetImport.importFromFile(".\\trainingSet.txt",80,outputsize,",");
+            newData=TrainingSetImport.importFromFile("D:\\Final Project\\FaceRecognition_Payroll\\trainingSet.txt",80,outputsize,",");
             newData.addRow(new DataSetRow(testImage,output));
             newData.normalize(new DecimalScaleNormalizer());
             newData.saveAsTxt("trainingSetNEWW.txt",",");
@@ -222,7 +223,7 @@ public class NeuralNet {
     private void logger(Exception e)
     {
         try {
-            fh = new FileHandler(".\\BLLLogger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\BLLLogger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter(); 
             fh.setFormatter(formatter);
@@ -295,7 +296,7 @@ public class NeuralNet {
         int high=0,id = 0,size=0;
         try
         {
-            newData=TrainingSetImport.importFromFile(".\\trainingSet.txt",80,outputsize,",");
+            newData=TrainingSetImport.importFromFile("D:\\Final Project\\FaceRecognition_Payroll\\trainingSet.txt",80,outputsize,",");
             newData.addRow(new DataSetRow(testImage,output));
             newData.normalize(new DecimalScaleNormalizer());
             newData.saveAsTxt("trainingSetNEWW.txt",",");

@@ -34,7 +34,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
          try
         {
-            fh = new FileHandler(".\\Logger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\Logger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();  
             fh.setFormatter(formatter); 

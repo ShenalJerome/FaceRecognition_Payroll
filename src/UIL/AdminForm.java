@@ -45,7 +45,7 @@ public class AdminForm extends javax.swing.JFrame {
         txtId.setEditable(false);
         try
         {
-            fh = new FileHandler(".\\Logger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\Logger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();  
             fh.setFormatter(formatter); 

@@ -278,3 +278,73 @@ org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve
 	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
 	at java.lang.Thread.run(Thread.java:748)
 
+Aug 01, 2018 6:48:23 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 01, 2018 7:05:26 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 01, 2018 7:13:54 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 01, 2018 7:14:34 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 01, 2018 7:17:04 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 01, 2018 7:17:50 PM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 02, 2018 9:51:40 AM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 03, 2018 9:28:15 AM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 03, 2018 9:29:03 AM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+
+Aug 03, 2018 9:30:17 AM UIL.UserVerification$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at UIL.UserVerification$captureImage.run(UserVerification.java:70)
+	at java.lang.Thread.run(Thread.java:748)
+

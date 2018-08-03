@@ -52,7 +52,7 @@ public class UserVerification extends javax.swing.JFrame {
     OpenCVFrameConverter.ToIplImage converter=new OpenCVFrameConverter.ToIplImage();
     BufferedImage bImg,captured,detected,hist;
     File file;
-    String name,address;int mobile,acc,outputs;
+    String name,address;int mobile,acc,outputs;float bal,with;
     
     class captureImage implements Runnable{
         protected volatile boolean runn = false;
@@ -62,7 +62,7 @@ public class UserVerification extends javax.swing.JFrame {
         public void run() {
             try
             {
-                grabber=new VideoInputFrameGrabber(0);
+                //grabber=new VideoInputFrameGrabber(0);
                 grabber=new  OpenCVFrameGrabber(0);
                 grabber.start();
                 while(runn)
@@ -71,7 +71,7 @@ public class UserVerification extends javax.swing.JFrame {
                     ipimg=converter.convertToIplImage(frame);
                     if(ipimg!=null)
                     {
-                        cvFlip(ipimg, ipimg, 1);
+                        //cvFlip(ipimg, ipimg, 1);
                         bImg=uobj.ipltoBuffered(ipimg);
                         Graphics g=jPanel1.getGraphics();
                         if (g.drawImage(bImg, 0, 0, getWidth(), getHeight() -150 , 0, 0, bImg.getWidth(), bImg.getHeight(), null))
@@ -98,7 +98,7 @@ public class UserVerification extends javax.swing.JFrame {
         capture();
         try
         {
-            fh = new FileHandler(".\\Logger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\Logger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();  
             fh.setFormatter(formatter); 
@@ -122,7 +122,7 @@ public class UserVerification extends javax.swing.JFrame {
     private void openFile()//alternative to real time detection
     {
         final JFrame frame = new JFrame("Select image to be recognized");
-        JFileChooser fc=new JFileChooser("D:\\Final Project\\FaceRecognition_Payroll\\trainingset");
+        JFileChooser fc=new JFileChooser("D:\\Final Project\\FaceRecognition_Payroll\\trainingimages");
         int returnVal = fc.showOpenDialog(frame);
         if(returnVal==JFileChooser.APPROVE_OPTION)
         {
@@ -170,8 +170,8 @@ public class UserVerification extends javax.swing.JFrame {
     /**
      * this is the method to recognize the faces
      */
-    private void recognizeFaces(BufferedImage newImage)
-             {
+    private void recognizeFaces(BufferedImage newImage)//get the buffered image as parameter
+    {
         NeuralNet nnet=new NeuralNet();
         GaborFeature gf=new GaborFeature();
         ResultSet rs;
@@ -387,7 +387,7 @@ public class UserVerification extends javax.swing.JFrame {
         
         if(txtPIN.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(null,"Please enter your Password and try again","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please enter your PIN and try again","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else
         {
@@ -423,7 +423,7 @@ public class UserVerification extends javax.swing.JFrame {
 
         if(txtPIN.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(null,"Enter The password and try again","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please enter your PIN and try again","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else
         {

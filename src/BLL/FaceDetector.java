@@ -57,7 +57,7 @@ public class FaceDetector {
         Util uobj=new Util();
 
         try{
-        CASCADE_FILE = ".\\haarcascade_frontalface_alt.xml";//the cascade file
+        CASCADE_FILE = "D:\\Final Project\\FaceRecognition_Payroll\\haarcascade_frontalface_alt.xml";//the cascade file
         classifier = CvHaarClassifierCascade.load(CASCADE_FILE, opencv_core.AbstractCvSize.ZERO);//load file
         
         gray=obj.converttoGray(imgfile);//convert to gray
@@ -65,8 +65,8 @@ public class FaceDetector {
         IplImage smallimage = IplImage.create(grayimage.width(), grayimage.height(), grayimage.depth(), grayimage.nChannels());
         //cvConvert(grayimage,smallimage);
         cvClearMemStorage(storage);
-        faces = cvHaarDetectObjects(smallimage, classifier, storage, 1.1, 3, CV_HAAR_DO_CANNY_PRUNING);        cvResize(grayimage, smallimage, CV_INTER_AREA);//resize the image for detection
-
+        cvResize(grayimage, smallimage, CV_INTER_AREA);//resize the image for detection
+        faces = cvHaarDetectObjects(smallimage, classifier, storage, 1.1, 3, CV_HAAR_DO_CANNY_PRUNING);
         
         if (faces != null)
         {
@@ -110,7 +110,7 @@ public class FaceDetector {
     private void logger(Exception e)
     {
         try {
-            fh = new FileHandler(".\\BLLLogger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\BLLLogger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter(); 
             fh.setFormatter(formatter);

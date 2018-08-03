@@ -115,7 +115,7 @@ public class RegisterUser extends javax.swing.JFrame {
         //generateAccount();
          try
         {
-            fh = new FileHandler(".\\Logger.log", true);
+            fh = new FileHandler("D:\\Final Project\\FaceRecognition_Payroll\\Logger.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();  
             fh.setFormatter(formatter); 
@@ -198,7 +198,7 @@ public class RegisterUser extends javax.swing.JFrame {
         try
         {
             String text=String.valueOf(id)+",";
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(".\\trainingset\\traininglabels.txt", true)));
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("D:\\Final Project\\FaceRecognition_Payroll\\trainingimages\\traininglabels.txt", true)));
             pw.print(text);
             pw.close();
         }
@@ -732,7 +732,7 @@ public class RegisterUser extends javax.swing.JFrame {
             {
                 if(noi<=6)
                 {
-                File output=new File(".\\trainingset\\"+uid+"_"+noi+".jpg");
+                File output=new File("D:\\Final Project\\FaceRecognition_Payroll\\trainingimages\\"+uid+"_"+noi+".jpg");
                 ImageIO.write(histImg,"jpg",output);
                 writeId(uid);//method to write the labels
                 labelNoimages.setText("No.of Images - "+noi);
@@ -741,7 +741,7 @@ public class RegisterUser extends javax.swing.JFrame {
                 }   //i++;
                 else
                 {
-                    File output=new File(".\\testSet\\"+uid+"_"+noi+".jpg");
+                    File output=new File("D:\\Final Project\\FaceRecognition_Payroll\\testSet\\"+uid+"_"+noi+".jpg");
                     ImageIO.write(histImg,"jpg",output);
                     writeId(uid);//method to write the labels
                     labelNoimages.setText("No.of Images - "+noi);
@@ -795,7 +795,7 @@ public class RegisterUser extends javax.swing.JFrame {
  private void openFile()//alternative to real time detection
     {
         final JFrame frame = new JFrame("Select image to be recognized");
-        JFileChooser fc=new JFileChooser(".\\testSet");
+        JFileChooser fc=new JFileChooser("D:\\Final Project\\FaceRecognition_Payroll\\testSet");
         int returnVal = fc.showOpenDialog(frame);
         if(returnVal==JFileChooser.APPROVE_OPTION)
         {
